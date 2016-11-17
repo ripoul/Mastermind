@@ -4,9 +4,9 @@
 */
 class Config
 {
-	public static $DB_NAME = "mastermind";
-	public static $DB_USERNAME = "root";
-	public static $DB_PASSWORD = "root";
+	public static $DB_NAME = "PHP_MASTER";
+	public static $DB_USERNAME = "nom_utilisateur";
+	public static $DB_PASSWORD = "mdp";
 }
 
 ?>
