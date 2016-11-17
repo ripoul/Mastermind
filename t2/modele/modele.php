@@ -98,6 +98,7 @@ try{
   	$result=$statement->fetch(PDO::FETCH_ASSOC);
 
     if (crypt($_COOKIE["mdp"], $result["motDePasse"])== $result["motDePasse"]) {
+      unset($_COOKIE["mdp"]);
       return true;
     }
 	}

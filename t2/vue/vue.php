@@ -39,7 +39,7 @@ function pseudonok(){
   <body>
   <br/>
   <br/>
-  pseudo nok
+  pseudo ou mdp incorect
 
   <form method="post" action="init.php">
   <input type="submit" name="soumettre" value="menue principal"/>
@@ -52,58 +52,74 @@ function pseudonok(){
   <?php
  }
 
- function msg($tab){
-   ?>
-   <html>
-   <body>
-   <h2>Commentaire</h2>
+function premiere_demande(){
+  ?>
   <form method="post" action="init.php">
-   <textarea name="commentaire" rows="4" cols="50">
-   </textarea>
-   <input type="submit" name="soumettre" value="envoyer"/>
-   </form>
-
-   <h2>Historique Commentaire<h2>
-    <?php
-    for ($i=0; $i < count($tab); $i++) {
-      print($tab[$i]['pseudo'].":".$tab[$i]['message']);
-      ?><br>
-      <?php
-    }
-
-
+  <?php
+  for($k=1; $k<=4; $k++)
+  {
     ?>
-   <br/>
-   <br/>
+    <select name="<?php echo "choixCouleur".$k; ?>">
+      <option value="rouge" class="rouge">rouge</option>
+      <option value="jaune" class="jaune">jaune</option>
+      <option value="vert" class="vert">vert</option>
+      <option value="bleu" class="bleu">bleu</option>
+      <option value="orange" class="orange">orange</option>
+      <option value="blanc" class="blanc">blanc</option>
+      <option value="violet" class="violet">violet</option>
+      <option value="fushia" class="fushia">fushia</option>
+    </select>
+    <?php
+  }
+  ?>
+  </p>
+  <p><input type="submit" value="Essayer cette combinaison"></p>
+  <input type="hidden" name="tryComb" value=" ">
+  </form>
+  <?php
+}
 
-   <?php
- }
-
- function message2($tab){
-   ?>
-   <html>
-   <body>
-   <h2>Commentaire</h2>
+function suivante(){
+  ?>
   <form method="post" action="init.php">
-   <textarea name="commentaire" rows="4" cols="50">
-   </textarea>
-   <input type="submit" name="soumettre" value="envoyer"/>
-   </form>
-
-   <h2>Historique Commentaire<h2>
-    <?php
-    for ($i=0; $i < count($tab); $i++) {
-      print($tab[$i]['pseudo'].":".$tab[$i]['message']);
-      ?><br>
-      <?php
-    }
-
-
+  <?php
+  for($k=1; $k<=4; $k++)
+  {
     ?>
-   <br/>
-   <br/>
+    <select name="<?php echo "choixCouleur".$k; ?>">
+      <option value="rouge" class="rouge">rouge</option>
+      <option value="jaune" class="jaune">jaune</option>
+      <option value="vert" class="vert">vert</option>
+      <option value="bleu" class="bleu">bleu</option>
+      <option value="orange" class="orange">orange</option>
+      <option value="blanc" class="blanc">blanc</option>
+      <option value="violet" class="violet">violet</option>
+      <option value="fushia" class="fushia">fushia</option>
+    </select>
+    <?php
+    }
+    ?>
+    <table>
+      <tr>
+       <td><?php echo $_COOKIE["c1"] ?></td>
+       <td><?php echo $_COOKIE["c2"] ?></td>
+       <td><?php echo $_COOKIE["c3"] ?></td>
+       <td><?php echo $_COOKIE["c4"] ?></td>
+      </tr>
+      <tr>
+       <td><?php  ?></td>
+       <td><?php  ?></td>
+       <td><?php  ?></td>
+       <td><?php  ?></td>
+      </tr>
+    </table>
 
-   <?php
- }
+  </p>
+  <p><input type="submit" value="Essayer cette combinaison"></p>
+  <input type="hidden" name="tryComb" value=" ">
+  </form>
+  <?php
+}
+
 }
 ?>

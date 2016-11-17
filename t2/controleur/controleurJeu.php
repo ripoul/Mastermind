@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__."/../vue/vue.php";
-require_once __DIR__."/../modele/modele.php";
+require_once __DIR__."/../modele/Jeu.php";
 
-class ControleurAuthentification{
+class ControleurJeu{
 
 private $vue;
 private $mod;
@@ -10,16 +10,20 @@ private $mod;
 
 function __construct(){
 $this->vue=new Vue();
-$this->mod=new Modele();
+$this->mod=new Jeu();
 }
 
-function accueil(){
-  $this->vue->demandePseudo();
+function start(){
+  $this->vue->premiere_demande();
+}
+
+function next(){
+  $this->vue->suivante();
 }
 
 function verif(){
   if($this->mod->exists()){
-    return true;
+    $this->vue->pseudook();
   }
   else{
     $this->vue->pseudonok();
