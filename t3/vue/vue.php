@@ -39,6 +39,35 @@ function pseudook(){
     <?php
   }
 
+  function gagner(){
+      ?>
+      <html>
+      <body>
+      <br/>
+      <br/>
+      gagne
+      <br/>
+      <br/>
+
+      <?php
+    }
+
+
+    function perdu(){
+        ?>
+        <html>
+        <body>
+        <br/>
+        <br/>
+        perdu
+        <br/>
+        <br/>
+
+        <?php
+      }
+
+
+
 function pseudonok(){
   ?>
   <html>
@@ -62,6 +91,11 @@ function premiere_demande(){
   ?>
   <form method="post" action="init.php">
   <?php
+
+  for ($i=0; $i < 4; $i++) {
+    echo($_SESSION["soluce"][$i]);
+  }
+
   for($k=1; $k<=4; $k++)
   {
     ?>

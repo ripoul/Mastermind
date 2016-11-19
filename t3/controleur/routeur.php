@@ -35,9 +35,33 @@ class Routeur {
       }
     }
 
-    if(isset($_SESSION["connect"])){
+    //si pas de combinaison essayer
+    if(isset($_SESSION["connect"])&&isset($SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
       if ($_SESSION["connect"]==true){
         $this->ctrlJeu->start();
+      }
+    }
+
+    //si une combinaison essayer
+    if(isset($_SESSION["connect"])&&isset($SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])){
+      if ($_SESSION["connect"]==true){
+        $_COOKIE["c1"]=$_POST["choixCouleur1"];
+        $_COOKIE["c2"]=$_POST["choixCouleur2"];
+        $_COOKIE["c3"]=$_POST["choixCouleur3"];
+        $_COOKIE["c4"]=$_POST["choixCouleur4"];
+        $this->ctrlJeu->enregistrer();
+      }
+    }
+
+    if(isset($_SESSION["connect"])&&isset($SESSION["gagne"])==true){
+      if ($_SESSION["connect"]==true && $_SESSION["gagne"]==true){
+        $this->ctrlJeu->gagner();
+      }
+    }
+
+    if(isset($_SESSION["connect"])&&isset($SESSION["gagne"])==true){
+      if ($_SESSION["connect"]==true && $_SESSION["gagne"]==false){
+        $this->ctrlJeu->perdu();
       }
     }
   }
