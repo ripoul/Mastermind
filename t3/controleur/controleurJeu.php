@@ -27,16 +27,13 @@ function perdu(){
 }
 
 function enregistrer(){
-  //si premier tour on cree la matrice de cout jouer
-  if (isset($_SESSION["cout"])==false) {
-    $_SESSION["cout"]=array($_SESSION["nb_cout"] => array("c1" => $_COOKIE["c1"], "c2" => $_COOKIE["c2"],"c3" => $_COOKIE["c3"],"c4" => $_COOKIE["c4"]));
+  $this->mod->jouer();
+    $_SESSION["cout"][$_SESSION["nb_cout"]]=array(0 => $_COOKIE["c1"], 1 => $_COOKIE["c2"],2 => $_COOKIE["c3"],3 => $_COOKIE["c4"]);
     //supprimer les cookie
-  }
-  else{
-    $_SESSION["cout"][$_SESSION["nb_cout"]]=array("c1" => $_COOKIE["c1"], "c2" => $_COOKIE["c2"],"c3" => $_COOKIE["c3"],"c4" => $_COOKIE["c4"]);
-    //supprimer les cookie
-  }
-
+    unset($_COOKIE["c1"]);
+    unset($_COOKIE["c2"]);
+    unset($_COOKIE["c3"]);
+    unset($_COOKIE["c4"]);
 }
 }
 ?>

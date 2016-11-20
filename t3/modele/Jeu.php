@@ -15,23 +15,23 @@ class jeu{
 
   function jouer(){
     $_SESSION["nb_cout"]=$_SESSION["nb_cout"]+1;
-    if(array_key_exists("choixc1", $_COOKIE)&&array_key_exists("choixc2", $_COOKIE)&&array_key_exists("choixc3", $_COOKIE)&&array_key_exists("choixc4", $_COOKIE)){
-      if($_COOKIE["choixc1"]==$this->couleur1&&$_COOKIE["choixc2"]==$this->couleur2&&$_COOKIE["choixc3"]==$this->couleur3&&$_COOKIE["choixc4"]==$this->couleur4){
+    if(array_key_exists("c1", $_COOKIE)&&array_key_exists("c2", $_COOKIE)&&array_key_exists("c3", $_COOKIE)&&array_key_exists("c4", $_COOKIE)){
+      if($_COOKIE["c1"]==$_SESSION["soluce"][0]&&$_COOKIE["c2"]==$_SESSION["soluce"][1]&&$_COOKIE["c3"]==$_SESSION["soluce"][2]&&$_COOKIE["c4"]==$_SESSION["soluce"][3]){
         $_SESSION["gagne"]=true;
 				return;
       }
-			if ($_SESSION["nb_cout"]>10) {
+			if ($_SESSION["nb_cout"]>10&&isset($_SESSION["gagne"])==false) {
 				$_SESSION["gagne"]=false;
 			}
     }
   }
 
   function converts_int_c($nb){
-
+		return Jeu::$INT_COLORS[$nb];
   }
 
   function converts_c_int($color){
-
+		return Jeu::$COLORS_INT[$color];
   }
 }
 ?>
