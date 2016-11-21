@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 require_once __DIR__."/controleurAuthentification.php";
 require_once __DIR__."/controleurJeu.php";
@@ -16,6 +16,12 @@ class Routeur {
   public function route() {
     //savoir ou on en est : tableau
 
+    if(isset($_POST["retry"])){
+      unset($_POST);
+      unset($_COOKIE);
+      unset($_SESSION);
+    }
+
     //non connecter
     if(isset($_SESSION["pseudo"])==false&&empty($_POST)){
       $this->ctrlAuthentification->accueil();
@@ -27,8 +33,8 @@ class Routeur {
       //on se connect
       //echo "premier";
       $_COOKIE["pseudo"]=$_POST["pseudo"];
-      //$_SESSION["pseudo"]=$_POST["pseudo"];
       $_COOKIE["mdp"]=$_POST["mdp"];
+      $_SESSION["pseudo"]=$_POST["pseudo"];
       if($this->ctrlAuthentification->verif()){
         $_SESSION["connect"]=true;
         $_SESSION["pseudo"]=$_POST["pseudo"];
@@ -36,13 +42,6 @@ class Routeur {
         unset($_COOKIE["mdp"]);
         unset($_POST["pseudo"]);
         unset($_POST["mdp"]);
-      }
-    }
-
-    //si pas de combinaison essayer
-    if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
-      if ($_SESSION["connect"]==true){
-        $this->ctrlJeu->start();
       }
     }
 
@@ -58,6 +57,13 @@ class Routeur {
         unset($_POST["choixCouleur3"]);
         unset($_POST["choixCouleur4"]);
         $this->ctrlJeu->enregistrer();
+      }
+    }
+
+    //si pas de combinaison essayer
+    if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
+      if ($_SESSION["connect"]==true){
+        $this->ctrlJeu->start();
       }
     }
 
