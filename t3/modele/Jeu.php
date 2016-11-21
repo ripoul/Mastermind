@@ -16,7 +16,7 @@ class jeu{
   function jouer(){
     $_SESSION["nb_cout"]=$_SESSION["nb_cout"]+1;
     if(array_key_exists("c1", $_COOKIE)&&array_key_exists("c2", $_COOKIE)&&array_key_exists("c3", $_COOKIE)&&array_key_exists("c4", $_COOKIE)){
-      if($_COOKIE["c1"]==$_SESSION["soluce"][0]&&$_COOKIE["c2"]==$_SESSION["soluce"][1]&&$_COOKIE["c3"]==$_SESSION["soluce"][2]&&$_COOKIE["c4"]==$_SESSION["soluce"][3]){
+			if($_COOKIE["c1"]==$_SESSION["soluce"][0]&&$_COOKIE["c2"]==$_SESSION["soluce"][1]&&$_COOKIE["c3"]==$_SESSION["soluce"][2]&&$_COOKIE["c4"]==$_SESSION["soluce"][3]){
         $_SESSION["gagne"]=true;
 				return;
       }

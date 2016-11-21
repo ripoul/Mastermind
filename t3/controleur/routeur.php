@@ -25,6 +25,7 @@ class Routeur {
     //en cour de connection
     if(isset($_SESSION["pseudo"])==false&&isset($_POST["pseudo"])){
       //on se connect
+      //echo "premier";
       $_COOKIE["pseudo"]=$_POST["pseudo"];
       $_SESSION["pseudo"]=$_POST["pseudo"];
       $_COOKIE["mdp"]=$_POST["mdp"];
@@ -38,7 +39,7 @@ class Routeur {
     }
 
     //si pas de combinaison essayer
-    if(isset($_SESSION["connect"])&&isset($SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
+    if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
       if ($_SESSION["connect"]==true){
         //echo "test4";
         $this->ctrlJeu->start();
@@ -49,7 +50,7 @@ class Routeur {
     //si une combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])){
       if ($_SESSION["connect"]==true){
-        //echo "test1";
+        //echo "essay comb";
         $_COOKIE["c1"]=$_POST["choixCouleur1"];
         $_COOKIE["c2"]=$_POST["choixCouleur2"];
         $_COOKIE["c3"]=$_POST["choixCouleur3"];
@@ -69,12 +70,14 @@ class Routeur {
     }
 
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
+      //echo "gangne ou perd";
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==true){
         $this->ctrlJeu->gagner();
       }
     }
 
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
+      //echo "gangne ou perd";
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==false){
         $this->ctrlJeu->perdu();
       }
