@@ -117,6 +117,29 @@ catch(PDOException $e){
     throw new TableAccesException("problème avec la table pseudonyme");
     }
 }
+
+public function enregistrerPartie(){
+  try{
+  	$statement = $this->connexion->prepare("insert into parties (pseudo, partieGagnee, nombreCoups) values (?,?,?);");
+  	$statement->bindParam(1, $_SESSION["pseudo"]);
+    if ($_SESSION["gagne"]) {
+      $var=1;
+    }
+    else{
+      $var=0;
+    }
+    $varr=9;
+    //$_SESSION["nb_cout"]
+    $statement->bindParam(2, $var);
+    $statement->bindParam(3, $varr);
+  	$statement->execute();
+  	//$result=$statement->fetch(PDO::FETCH_ASSOC);
+  }
+  catch(PDOException $e){
+      $this->deconnexion();
+      throw new TableAccesException("problème avec la table partie");
+      }
+}
 }
 
 ?>

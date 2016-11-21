@@ -27,10 +27,11 @@ class Routeur {
       //on se connect
       //echo "premier";
       $_COOKIE["pseudo"]=$_POST["pseudo"];
-      $_SESSION["pseudo"]=$_POST["pseudo"];
+      //$_SESSION["pseudo"]=$_POST["pseudo"];
       $_COOKIE["mdp"]=$_POST["mdp"];
       if($this->ctrlAuthentification->verif()){
         $_SESSION["connect"]=true;
+        $_SESSION["pseudo"]=$_POST["pseudo"];
         unset($_COOKIE["pseudo"]);
         unset($_COOKIE["mdp"]);
         unset($_POST["pseudo"]);
@@ -72,6 +73,7 @@ class Routeur {
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
       //echo "gangne ou perd";
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==true){
+        $this->ctrlAuthentification->enregistrerPartie();
         $this->ctrlJeu->gagner();
       }
     }
@@ -79,6 +81,7 @@ class Routeur {
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
       //echo "gangne ou perd";
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==false){
+        $this->ctrlAuthentification->enregistrerPartie();
         $this->ctrlJeu->perdu();
       }
     }
