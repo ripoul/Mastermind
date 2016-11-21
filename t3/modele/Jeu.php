@@ -19,9 +19,33 @@ class jeu{
         $_SESSION["gagne"]=true;
 				return;
       }
-			if ($_SESSION["nb_cout"]>10&&isset($_SESSION["gagne"])==false) {
+			if ($_SESSION["nb_cout"]>9&&isset($_SESSION["gagne"])==false) {
 				$_SESSION["gagne"]=false;
+				return;
 			}
+
+			//gestion des petites boules rouge (bien placer)
+			$cpt_rouge=0;
+			for ($i=0; $i < 4; $i++) {
+				if($_SESSION["soluce"][$i]==$_COOKIE["c".($i+1)]){
+					$cpt_rouge=$cpt_rouge+1;
+				}
+			}
+			$_SESSION["brouge"]=$cpt_rouge;
+
+			$cpt_noire=0;
+			for ($i=0; $i < 4; $i++) {
+				for ($j=0; $j < 4; $j++) {
+					if($_SESSION["soluce"][$i]==$_COOKIE["c".($j+1)]){
+						$cpt_noire=$cpt_noire+1;
+					}
+				}
+			}
+			$cpt_noire=$cpt_noire-$cpt_rouge;
+			$_SESSION["bnoire"]=$cpt_noire;
+
+
+
     }
   }
 

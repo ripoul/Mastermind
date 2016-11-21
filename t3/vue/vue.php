@@ -46,6 +46,8 @@ function pseudook(){
       <br/>
       <br/>
       gagne
+      <form method="post" action="init.php">
+      <input type="submit" name="recomencer" value="true"/>
       <br/>
       <br/>
 
@@ -111,6 +113,10 @@ function premiere_demande(){
     </select>
     <?php
   }
+  if (isset($_SESSION["bnoire"])) {
+    echo $_SESSION["bnoire"]." ".$_SESSION["brouge"];
+
+  }
   ?>
   </p>
   <p><input type="submit" value="Essayer cette combinaison"></p>
@@ -118,48 +124,5 @@ function premiere_demande(){
   </form>
   <?php
 }
-
-function suivante(){
-  ?>
-  <form method="post" action="init.php">
-  <?php
-  for($k=1; $k<=4; $k++)
-  {
-    ?>
-    <select name="<?php echo "choixCouleur".$k; ?>">
-      <option value="rouge" class="rouge">rouge</option>
-      <option value="jaune" class="jaune">jaune</option>
-      <option value="vert" class="vert">vert</option>
-      <option value="bleu" class="bleu">bleu</option>
-      <option value="orange" class="orange">orange</option>
-      <option value="blanc" class="blanc">blanc</option>
-      <option value="violet" class="violet">violet</option>
-      <option value="fushia" class="fushia">fushia</option>
-    </select>
-    <?php
-    }
-    ?>
-    <table>
-      <tr>
-       <td><?php echo $_COOKIE["c1"] ?></td>
-       <td><?php echo $_COOKIE["c2"] ?></td>
-       <td><?php echo $_COOKIE["c3"] ?></td>
-       <td><?php echo $_COOKIE["c4"] ?></td>
-      </tr>
-      <tr>
-       <td><?php  ?></td>
-       <td><?php  ?></td>
-       <td><?php  ?></td>
-       <td><?php  ?></td>
-      </tr>
-    </table>
-
-  </p>
-  <p><input type="submit" value="Essayer cette combinaison"></p>
-  <input type="hidden" name="tryComb" value=" ">
-  </form>
-  <?php
-}
-
 }
 ?>

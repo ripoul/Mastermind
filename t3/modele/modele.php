@@ -33,22 +33,22 @@ private $connexion;
 
   public function __construct(){
    try{
-      /*$chaine="mysql:host=localhost;dbname=PHP_MASTER";
+      $chaine="mysql:host=localhost;dbname=PHP_MASTER";
       $this->connexion = new PDO($chaine,"nom_utilisateur","mdp");
       $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
      }
     catch(PDOException $e){
       $exception=new ConnexionException("problème de connection à la base");
       throw $exception;
-    }*/
-    $chaine="mysql:host=localhost;dbname=E155251B";
+    }
+    /*$chaine="mysql:host=localhost;dbname=E155251B";
     $this->connexion = new PDO($chaine,"E155251B","E155251B");
     $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
    }
   catch(PDOException $e){
     $exception=new ConnexionException("problème de connection à la base");
     throw $exception;
-  }
+  }*/
   }
 
 
@@ -60,13 +60,6 @@ public function deconnexion(){
    $this->connexion=null;
 }
 
-
-//A développer
-// utiliser une requête classique
-// méthode qui permet de récupérer les pseudos dans la table pseudo
-// post-condition:
-//retourne un tableau à une dimension qui contient les pseudos.
-// si un problème est rencontré, une exception de type TableAccesException est levée
 
 public function getPseudos(){
  try{
@@ -128,10 +121,8 @@ public function enregistrerPartie(){
     else{
       $var=0;
     }
-    $varr=9;
-    //$_SESSION["nb_cout"]
     $statement->bindParam(2, $var);
-    $statement->bindParam(3, $varr);
+    $statement->bindParam(3, $_SESSION["nb_cout"]);
   	$statement->execute();
   	//$result=$statement->fetch(PDO::FETCH_ASSOC);
   }

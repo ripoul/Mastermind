@@ -42,16 +42,13 @@ class Routeur {
     //si pas de combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
       if ($_SESSION["connect"]==true){
-        //echo "test4";
         $this->ctrlJeu->start();
-        //echo "test5";
       }
     }
 
     //si une combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])){
       if ($_SESSION["connect"]==true){
-        //echo "essay comb";
         $_COOKIE["c1"]=$_POST["choixCouleur1"];
         $_COOKIE["c2"]=$_POST["choixCouleur2"];
         $_COOKIE["c3"]=$_POST["choixCouleur3"];
@@ -60,13 +57,7 @@ class Routeur {
         unset($_POST["choixCouleur2"]);
         unset($_POST["choixCouleur3"]);
         unset($_POST["choixCouleur4"]);
-        //echo var_dump($_POST);
-        //echo var_dump($_COOKIE);
-        //echo var_dump($_SESSION);
-        //echo "test2";
         $this->ctrlJeu->enregistrer();
-        //echo var_dump($_SESSION);
-        //echo "test3";
       }
     }
 
