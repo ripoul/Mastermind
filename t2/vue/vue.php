@@ -55,10 +55,12 @@ function pseudonok(){
 function premiere_demande(){
   ?>
   <form method="post" action="init.php">
+  <center>
   <?php
   for($k=1; $k<=4; $k++)
   {
     ?>
+
     <select name="<?php echo "choixCouleur".$k; ?>">
       <option value="rouge" class="rouge">rouge</option>
       <option value="jaune" class="jaune">jaune</option>
@@ -72,11 +74,39 @@ function premiere_demande(){
     <?php
   }
   ?>
+  <table style="border: 1px solid black">
+  <?php
+  for($k=1; $k<=10; $k++) {
+  ?>
+    <tr>
+      <td style="border: 1px solid black" width="50" height="50"> </td>
+      <td style="border: 1px solid black" width="50" height="50"></td>
+      <td style="border: 1px solid black" width="50" height="50"></td>
+      <td style="border: 1px solid black" width="50" height="50"></td>
+      <td>
+        <table>
+          <tr>
+            <td style="border: 1px solid black" width="25" height="25"></td>
+            <td style="border: 1px solid black" width="25" height="25"></td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black" width="25" height="25"></td>
+            <td style="border: 1px solid black" width="25" height="25"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <?php
+  }
+  ?>
+  </table>
   </p>
   <p><input type="submit" value="Essayer cette combinaison"></p>
   <input type="hidden" name="tryComb" value=" ">
   </form>
+</center>
   <?php
+
 }
 
 function suivante(){
