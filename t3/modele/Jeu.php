@@ -10,7 +10,6 @@ class jeu{
       $_SESSION["nb_cout"]=0;
       $_SESSION["soluce"]=array(0 => Jeu::$INT_COLORS[rand(1,8)], 1 => Jeu::$INT_COLORS[rand(1,8)],2 => Jeu::$INT_COLORS[rand(1,8)],3 => Jeu::$INT_COLORS[rand(1,8)]);
     }
-
   }
 
   function jouer(){

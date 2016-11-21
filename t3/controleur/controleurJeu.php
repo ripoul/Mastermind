@@ -34,7 +34,9 @@ function enregistrer(){
     unset($_COOKIE["c2"]);
     unset($_COOKIE["c3"]);
     unset($_COOKIE["c4"]);
-    $this->vue->premiere_demande();
+    if(isset($_SESSION["gagne"])==false){
+      $this->vue->premiere_demande();
+    }
 }
 }
 ?>

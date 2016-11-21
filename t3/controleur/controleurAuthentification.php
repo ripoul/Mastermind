@@ -25,5 +25,9 @@ function verif(){
     $this->vue->pseudonok();
   }
 }
+
+function enregistrerPartie(){
+  $this->mod->enregistrerPartie();
+}
 }
 ?>
