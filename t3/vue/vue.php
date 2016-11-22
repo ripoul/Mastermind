@@ -47,7 +47,10 @@ function pseudook(){
       <br/>
       gagne
       <form method="post" action="init.php">
-        <input type="submit" name="recomencer" value="true"/>
+        <input type="submit" name="recomencer" value="recomencer"/>
+        <input type="submit" name="ch_ut" value="changer utilisateur"/>
+      </form>
+
         <br/>
         <br/>
 
@@ -63,6 +66,10 @@ function pseudook(){
           <br/>
           perdu
           <br/>
+          <form method="post" action="init.php">
+            <input type="submit" name="recomencer" value="recomencer"/>
+            <input type="submit" name="ch_ut" value="changer utilisateur"/>
+          </form>
           <br/>
 
           <?php
@@ -79,7 +86,7 @@ function pseudook(){
             pseudo ou mdp incorect
 
             <form method="post" action="init.php">
-              <input type="submit" name="retry" value=" menue principal"/>
+              <input type="submit" name="ch_ut" value=" menue principal"/>
             </form>
 
 
@@ -95,7 +102,7 @@ function pseudook(){
                 for ($j=0; $j < 4; $j++) {
                   echo $_SESSION["cout"][$i][$j]." ";
                 }
-                echo $_SESSION["cout"][$i]["brouge"]." ".$_SESSION["cout"][$i]["bnoire"];
+                echo $_SESSION["cout"][$i]["brouge"]." ".$_SESSION["cout"][$i]["bnoire"]."<br/>";
               }
             }
             ?>

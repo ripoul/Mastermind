@@ -25,22 +25,22 @@ class Modele{
   // remplacer X par les informations qui vous concernent
   public function __construct(){
     try{
-      $chaine="mysql:host=localhost;dbname=PHP_MASTER";
+      /*$chaine="mysql:host=localhost;dbname=PHP_MASTER";
       $this->connexion = new PDO($chaine,"nom_utilisateur","mdp");
       $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e){
       $exception=new ConnexionException("problème de connection à la base");
       throw $exception;
-    }
-    /*$chaine="mysql:host=localhost;dbname=E155251B";
+    }*/
+    $chaine="mysql:host=localhost;dbname=E155251B";
     $this->connexion = new PDO($chaine,"E155251B","E155251B");
     $this->connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
   }
   catch(PDOException $e){
   $exception=new ConnexionException("problème de connection à la base");
   throw $exception;
-}*/
+}
 }
 
 // A développer

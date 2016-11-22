@@ -16,10 +16,24 @@ class Routeur {
   public function route() {
     //savoir ou on en est : tableau
 
-    if(isset($_POST["retry"])){
+    if(isset($_POST["ch_ut"])){
+      echo "ch_ut";
       unset($_POST);
       unset($_COOKIE);
-      unset($_SESSION);
+      $_SESSION=array();
+      //unset($_SESSION);
+    }
+
+    if(isset($_POST["recomencer"])){
+      echo "recomencer";
+      $_COOKIE["tmp"]=$_SESSION["pseudo"];
+      unset($_POST);
+      $_SESSION=array();
+      //unset($_SESSION);
+      $_SESSION["pseudo"]=$_COOKIE["tmp"];
+      $_SESSION["connect"]=true;
+      //$_SESSION["soluce"]=null;
+      unset($_COOKIE);
     }
 
     //non connecter
@@ -47,6 +61,7 @@ class Routeur {
 
     //si une combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])){
+      //echo "compi";
       if ($_SESSION["connect"]==true){
         $_COOKIE["c1"]=$_POST["choixCouleur1"];
         $_COOKIE["c2"]=$_POST["choixCouleur2"];
@@ -62,6 +77,7 @@ class Routeur {
 
     //si pas de combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
+      //echo "pas de compi";
       if ($_SESSION["connect"]==true){
         $this->ctrlJeu->start();
       }
