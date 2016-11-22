@@ -35,13 +35,16 @@ class jeu{
 
 
 			$cpt_noire=0;
+			$_vartab["tab_tmp"]=array();
 			for ($i=0; $i < 4; $i++) {
 				for ($j=0; $j < 4; $j++) {
-					if($_SESSION["soluce"][$i]==$_COOKIE["c".($j+1)]){
+					if($_SESSION["soluce"][$i]==$_COOKIE["c".($j+1)] && in_array($_COOKIE["c".($j+1)], $_vartab["tab_tmp"])==false){
+						$_vartab["tab_tmp"][1]=$_COOKIE["c".($j+1)];
 						$cpt_noire=$cpt_noire+1;
 					}
 				}
 			}
+			unset($_vartab);
 			$cpt_noire=$cpt_noire-$cpt_rouge;
 			$_COOKIE["cpt_noire"]=$cpt_noire;
 		}
