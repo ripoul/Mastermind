@@ -142,14 +142,14 @@ function pseudook(){
               {
                 ?>
                 <select name="<?php echo "choixCouleur".$k; ?>">
-                  <option value="red" class="red">rouge</option>
-                  <option value="yellow" class="yellow">jaune</option>
-                  <option value="green" class="green">vert</option>
-                  <option value="blue" class="blue">bleu</option>
-                  <option value="orange" class="orange">orange</option>
-                  <option value="white" class="white">blanc</option>
-                  <option value="purple" class="purple">violet</option>
-                  <option value="fuchsia" class="fuchsia">fushia</option>
+                  <option value="red" class="red" style="background-color: red">rouge</option>
+                  <option value="yellow" class="yellow" style="background-color: yellow">jaune</option>
+                  <option value="green" class="green" style="background-color: green">vert</option>
+                  <option value="blue" class="blue" style="background-color: blue">bleu</option>
+                  <option value="orange" class="orange" style="background-color: orange">orange</option>
+                  <option value="white" class="white" style="background-color: white">blanc</option>
+                  <option value="purple" class="purple" style="background-color: purple">violet</option>
+                  <option value="fuchsia" class="fuchsia" style="background-color: fuchsia">fushia</option>
                 </select>
                 <?php
               }
