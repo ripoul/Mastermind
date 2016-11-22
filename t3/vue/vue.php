@@ -98,10 +98,35 @@ function pseudook(){
 
           function premiere_demande(){
             if (isset($_SESSION["cout"])) {
-              for ($i=1; $i < $_SESSION["nb_cout"]+1; $i++) {
-                for ($j=0; $j < 4; $j++) {
+	  				?>	
+							<center>						
+							<table style="border: 1px solid black">
+            <?php
+							for ($i=1; $i < $_SESSION["nb_cout"]+1; $i++) {
+								?>
+								<tr>
+								<?php                
+								for ($j=0; $j < 4; $j++) {
+									?>
+									<td style="border: 1px solid black" width="50" height="50">
+								<?php
                   echo $_SESSION["cout"][$i][$j]." ";
                 }
+								?></td>
+									<td>
+										<table>
+											<tr>
+												<td style="border: 1px solid black" width="25" height="25"></td>
+												<td style="border: 1px solid black" width="25" height="25"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black" width="25" height="25"></td>
+												<td style="border: 1px solid black" width="25" height="25"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<?php
                 echo $_SESSION["cout"][$i]["brouge"]." ".$_SESSION["cout"][$i]["bnoire"]."<br/>";
               }
             }
@@ -129,6 +154,7 @@ function pseudook(){
                 <?php
               }
             ?>
+						</center>
           </p>
           <p><input type="submit" value="Essayer cette combinaison"></p>
           <input type="hidden" name="tryComb" value=" ">
