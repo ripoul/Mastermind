@@ -98,14 +98,14 @@ function pseudook(){
 
           function premiere_demande(){
             if (isset($_SESSION["cout"])) {
-	  				?>	
-							<center>						
+	  				?>
+							<center>
 							<table style="border: 1px solid black">
             <?php
 							for ($i=1; $i < $_SESSION["nb_cout"]+1; $i++) {
 								?>
 								<tr>
-								<?php                
+								<?php
 								for ($j=0; $j < 4; $j++) {
 									?>
 									<td style="border: 1px solid black" width="50" height="50">

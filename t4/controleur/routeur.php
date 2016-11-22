@@ -17,7 +17,7 @@ class Routeur {
     //savoir ou on en est : tableau
 
     if(isset($_POST["ch_ut"])){
-      echo "ch_ut";
+      //echo "ch_ut";
       unset($_POST);
       unset($_COOKIE);
       $_SESSION=array();
@@ -25,7 +25,7 @@ class Routeur {
     }
 
     if(isset($_POST["recomencer"])){
-      echo "recomencer";
+      //echo "recomencer";
       $_COOKIE["tmp"]=$_SESSION["pseudo"];
       unset($_POST);
       $_SESSION=array();

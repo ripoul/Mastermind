@@ -27,15 +27,17 @@ class ControleurJeu{
 
   function enregistrer(){
     $this->mod->jouer();
-    $_SESSION["cout"][$_SESSION["nb_cout"]]=array(0 => $_COOKIE["c1"], 1 => $_COOKIE["c2"],2 => $_COOKIE["c3"],3 => $_COOKIE["c4"], "brouge" => $_COOKIE["cpt_rouge"], "bnoire"=>$_COOKIE["cpt_noire"]);
+    if(isset($_SESSION["gagne"])==false){
+      $_SESSION["cout"][$_SESSION["nb_cout"]]=array(0 => $_COOKIE["c1"], 1 => $_COOKIE["c2"],2 => $_COOKIE["c3"],3 => $_COOKIE["c4"], "brouge" => $_COOKIE["cpt_rouge"], "bnoire"=>$_COOKIE["cpt_noire"]);
+    }
     //supprimer les cookie
     unset($_COOKIE["c1"]);
     unset($_COOKIE["c2"]);
     unset($_COOKIE["c3"]);
     unset($_COOKIE["c4"]);
     /*if(isset($_SESSION["gagne"])==false){
-      $this->vue->premiere_demande();
-    }*/
-  }
+    $this->vue->premiere_demande();
+  }*/
+}
 }
 ?>
