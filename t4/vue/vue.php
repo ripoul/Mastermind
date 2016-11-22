@@ -98,14 +98,14 @@ function pseudook(){
 
           function premiere_demande(){
             if (isset($_SESSION["cout"])) {
-	  				?>	
-							<center>						
+	  				?>
+							<center>
 							<table style="border: 1px solid black">
             <?php
 							for ($i=1; $i < $_SESSION["nb_cout"]+1; $i++) {
 								?>
 								<tr>
-								<?php                
+								<?php
 								for ($j=0; $j < 4; $j++) {
 									?>
 									<td style="border: 1px solid black" width="50" height="50" bgcolor="<?php echo $_SESSION["cout"][$i][$j]?>">
@@ -142,14 +142,14 @@ function pseudook(){
               {
                 ?>
                 <select name="<?php echo "choixCouleur".$k; ?>">
-                  <option value="red" class="red" style="background-color: red">rouge</option>
-                  <option value="yellow" class="yellow" style="background-color: yellow">jaune</option>
-                  <option value="green" class="green" style="background-color: green">vert</option>
-                  <option value="blue" class="blue" style="background-color: blue">bleu</option>
-                  <option value="orange" class="orange" style="background-color: orange">orange</option>
-                  <option value="white" class="white" style="background-color: white">blanc</option>
-                  <option value="purple" class="purple" style="background-color: purple">violet</option>
-                  <option value="fuchsia" class="fuchsia" style="background-color: fuchsia">fushia</option>
+                  <option value="red" style="background-color: red">rouge</option>
+                  <option value="yellow" style="background-color: yellow">jaune</option>
+                  <option value="green" style="background-color: green">vert</option>
+                  <option value="blue" style="background-color: blue">bleu</option>
+                  <option value="orange" style="background-color: orange">orange</option>
+                  <option value="white" style="background-color: white">blanc</option>
+                  <option value="purple" style="background-color: purple">violet</option>
+                  <option value="fuchsia" style="background-color: fuchsia">fushia</option>
                 </select>
                 <?php
               }
