@@ -98,6 +98,13 @@ class Routeur {
         $this->ctrlJeu->perdu();
       }
     }
+
+    if(isset($_POST["sup"])){
+      unset($_POST);
+      unset($_COOKIE);
+      $_SESSION=array();
+      echo "fini";
+    }
   }
 
 

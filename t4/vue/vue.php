@@ -159,6 +159,9 @@ function pseudook(){
           <p><input type="submit" value="Essayer cette combinaison"></p>
           <input type="hidden" name="tryComb" value=" ">
         </form>
+        <form method="post" action="init.php">
+          <input type="submit" name="sup" value="sup session"/>
+        </form>
         <?php
       }
     }
