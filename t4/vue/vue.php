@@ -124,12 +124,65 @@ function pseudook(){
                     <td>
                       <table>
                         <tr>
-                          <td style="border: 1px solid black" width="25" height="25"></td>
-                          <td style="border: 1px solid black" width="25" height="25"></td>
+                          <?php
+                          $black = $_SESSION["cout"][$i]["bnoire"];
+                          $white = $_SESSION["cout"][$i]["brouge"];
+                          $cptG=0;
+                          for ($a=0; $a < 2; $a++) {
+                            if($black!=0) {
+                              ?>
+                              <td style="border: 1px solid black" width="25" height="25" bgcolor="black"></td>
+                              <?php
+                              $black--;
+                              $cptG++;
+                            } else {
+                              if($white!=0) {
+                                ?>
+                                <td style="border: 1px solid black" width="25" height="25" bgcolor="red"></td>
+                                <?php
+                                $white--;
+                                $cptG++;
+                              }
+                            }
+                          }
+
+                          while($cptG<2){
+                            ?>
+                            <td style="border: 1px solid black" width="25" height="25"></td>
+                            <?php
+                            $cptG++;
+                          }
+
+                          ?>
                         </tr>
                         <tr>
-                          <td style="border: 1px solid black" width="25" height="25"></td>
-                          <td style="border: 1px solid black" width="25" height="25"></td>
+                          <?php
+                          for ($a=0; $a < 2; $a++) {
+                            if($black!=0) {
+                              ?>
+                              <td style="border: 1px solid black" width="25" height="25" bgcolor="black"></td>
+                              <?php
+                              $black--;
+                              $cptG++;
+                            } else {
+                              if($white!=0) {
+                                ?>
+                                <td style="border: 1px solid black" width="25" height="25" bgcolor="red"></td>
+                                <?php
+                                $white--;
+                                $cptG++;
+                              }
+                            }
+                          }
+
+                          while($cptG<4){
+                            ?>
+                            <td style="border: 1px solid black" width="25" height="25"></td>
+                            <?php
+                            $cptG++;
+                          }
+
+                          ?>
                         </tr>
                       </table>
                     </td>
