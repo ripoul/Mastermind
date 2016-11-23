@@ -68,11 +68,12 @@ class Routeur {
     }
 
     //si pas de combinaison essayer
-    if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
+    if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false&&isset($_POST["histo"])==false){
       if ($_SESSION["connect"]==true){
         $this->ctrlJeu->start();
       }
     }
+
 
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==true){
@@ -87,6 +88,11 @@ class Routeur {
         $this->ctrlAuthentification->enregistrerPartie();
         $this->ctrlJeu->perdu();
       }
+    }
+
+    if(isset($_POST["histo"])){
+      unset($_POST);
+      $this->ctrlAuthentification->historiquePartie();
     }
   }
 }

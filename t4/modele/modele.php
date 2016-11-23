@@ -57,6 +57,20 @@ public function getPseudos(){
   }
 }
 
+public function get10Partie(){
+  try{
+    $statement=$this->connexion->prepare("SELECT * from parties where pseudo=? order by nombreCoups limit 0,5;");
+    $statement->bindParam(1, $pseudoParam);
+    $pseudoParam=$_SESSION["pseudo"];
+    $statement->execute();
+    return($statement->fetchAll(PDO::FETCH_ASSOC));
+  }
+  catch(PDOException $e){
+    throw new TableAccesException("problème avec la table parties");
+  }
+}
+
+
 public function exists(){
   try{
     $statement = $this->connexion->prepare("select pseudo from joueurs where pseudo=?;");

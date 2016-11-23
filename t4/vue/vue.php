@@ -318,11 +318,36 @@ function pseudook(){
 
                 </p>
                 <p><input type="submit" value="Essayer cette combinaison"></p>
+              </form>
+              <form method="post" action="init.php">
                 <input type="submit" name="recomencer" value="recomencer partie"/>
                 <input type="submit" name="ch_ut" value="changer utilisateur"/>
+                <input type="submit" name="histo" value="afficher meilleur partie"/>
               </form>
             </center>
             <?php
           }
-        }
-        ?>
+
+          function histoPartie($histo){
+            ?>
+            <html>
+            <body>
+              <br/>
+              <br/>
+              <h2>Historique partie</h2>
+              utilisateur->gagner?->nombre de coups </br>
+              <?php
+              for ($i=0; $i < count($histo); $i++) {
+                print($histo[$i]['pseudo']."->".$tab[$i]['partieGagnee']."->".$tab[$i]['nombreCoups']);
+                ?><br>
+
+                <?php
+              }
+              ?>
+              <form method="post" action="init.php">
+                <input type="submit" name="cont" value="continuer"/>
+              </form>
+              <?php
+            }
+          }
+          ?>

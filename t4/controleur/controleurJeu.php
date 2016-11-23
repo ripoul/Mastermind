@@ -33,6 +33,6 @@ class ControleurJeu{
     unset($_COOKIE["c2"]);
     unset($_COOKIE["c3"]);
     unset($_COOKIE["c4"]);
-}
+  }
 }
 ?>

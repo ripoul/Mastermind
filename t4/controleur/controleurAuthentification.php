@@ -29,5 +29,10 @@ class ControleurAuthentification{
   function enregistrerPartie(){
     $this->mod->enregistrerPartie();
   }
+
+  function historiquePartie(){
+    $tab=$this->mod->get10Partie();
+    $this->vue->histoPartie($tab);
+  }
 }
 ?>
