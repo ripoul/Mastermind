@@ -14,25 +14,19 @@ class Routeur {
 
   // Traite une requête entrante
   public function route() {
-    //savoir ou on en est : tableau
 
     if(isset($_POST["ch_ut"])){
-      //echo "ch_ut";
       unset($_POST);
       unset($_COOKIE);
       $_SESSION=array();
-      //unset($_SESSION);
     }
 
     if(isset($_POST["recomencer"])){
-      //echo "recomencer";
       $_COOKIE["tmp"]=$_SESSION["pseudo"];
       unset($_POST);
       $_SESSION=array();
-      //unset($_SESSION);
       $_SESSION["pseudo"]=$_COOKIE["tmp"];
       $_SESSION["connect"]=true;
-      //$_SESSION["soluce"]=null;
       unset($_COOKIE);
     }
 
@@ -45,7 +39,6 @@ class Routeur {
     //en cour de connection
     if(isset($_SESSION["pseudo"])==false&&isset($_POST["pseudo"])){
       //on se connect
-      //echo "premier";
       $_COOKIE["pseudo"]=$_POST["pseudo"];
       $_COOKIE["mdp"]=$_POST["mdp"];
       $_SESSION["pseudo"]=$_POST["pseudo"];
@@ -61,7 +54,6 @@ class Routeur {
 
     //si une combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])){
-      //echo "compi";
       if ($_SESSION["connect"]==true){
         $_COOKIE["c1"]=$_POST["choixCouleur1"];
         $_COOKIE["c2"]=$_POST["choixCouleur2"];
@@ -77,14 +69,12 @@ class Routeur {
 
     //si pas de combinaison essayer
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==false&& isset($_POST["choixCouleur1"])==false){
-      //echo "pas de compi";
       if ($_SESSION["connect"]==true){
         $this->ctrlJeu->start();
       }
     }
 
     if(isset($_SESSION["connect"])&&isset($_SESSION["gagne"])==true){
-      //echo "gangne ou perd";
       if ($_SESSION["connect"]==true && $_SESSION["gagne"]==true){
         $this->ctrlAuthentification->enregistrerPartie();
         $this->ctrlJeu->gagner();
@@ -98,15 +88,6 @@ class Routeur {
         $this->ctrlJeu->perdu();
       }
     }
-
-    if(isset($_POST["sup"])){
-      unset($_POST);
-      unset($_COOKIE);
-      $_SESSION=array();
-      echo "fini";
-    }
   }
-
-
 }
 ?>

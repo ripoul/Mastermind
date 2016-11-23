@@ -1,6 +1,5 @@
 <?php
 
-// Classe generale de definition d'exception
 class MonException extends Exception{
   private $chaine;
   public function __construct($chaine){
@@ -11,18 +10,16 @@ class MonException extends Exception{
   }
 }
 
-// Exception relative à un probleme de connexion
+
 class ConnexionException extends MonException{
 }
-// Exception relative à un probleme d'accès à une table
+
 class TableAccesException extends MonException{
 }
 
-// Classe qui gère les accès à la base de données
+
 class Modele{
   private $connexion;
-  // Constructeur de la classe
-  // remplacer X par les informations qui vous concernent
   public function __construct(){
     try{
       $chaine="mysql:host=localhost;dbname=PHP_MASTER";
@@ -43,8 +40,6 @@ class Modele{
 }*/
 }
 
-// A développer
-// méthode qui permet de se deconnecter de la base
 public function deconnexion(){
   $this->connexion=null;
 }
@@ -62,11 +57,6 @@ public function getPseudos(){
   }
 }
 
-//A développer
-// utiliser une requête préparée
-//vérifie qu'un pseudo existe dans la table pseudonyme
-// post-condition retourne vrai si le pseudo existe sinon faux
-// si un problème est rencontré, une exception de type TableAccesException est levée
 public function exists(){
   try{
     $statement = $this->connexion->prepare("select pseudo from joueurs where pseudo=?;");
@@ -108,7 +98,6 @@ public function enregistrerPartie(){
     $statement->bindParam(2, $var);
     $statement->bindParam(3, $_SESSION["nb_cout"]);
     $statement->execute();
-    //$result=$statement->fetch(PDO::FETCH_ASSOC);
   }
   catch(PDOException $e){
     $this->deconnexion();
