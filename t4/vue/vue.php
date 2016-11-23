@@ -125,22 +125,22 @@ function pseudook(){
                       <table>
                         <tr>
                           <?php
-                          $black = $_SESSION["cout"][$i]["bnoire"];
-                          $white = $_SESSION["cout"][$i]["brouge"];
+                          $blanc = $_SESSION["cout"][$i]["bblanc"];
+                          $rouge = $_SESSION["cout"][$i]["brouge"];
                           $cptG=0;
                           for ($a=0; $a < 2; $a++) {
-                            if($black!=0) {
+                            if($blanc!=0) {
                               ?>
-                              <td style="border: 1px solid black" width="25" height="25" bgcolor="black"></td>
+                              <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                               <?php
-                              $black--;
+                              $blanc--;
                               $cptG++;
                             } else {
-                              if($white!=0) {
+                              if($rouge!=0) {
                                 ?>
                                 <td style="border: 1px solid black" width="25" height="25" bgcolor="red"></td>
                                 <?php
-                                $white--;
+                                $rouge--;
                                 $cptG++;
                               }
                             }
@@ -158,18 +158,18 @@ function pseudook(){
                         <tr>
                           <?php
                           for ($a=0; $a < 2; $a++) {
-                            if($black!=0) {
+                            if($blanc!=0) {
                               ?>
-                              <td style="border: 1px solid black" width="25" height="25" bgcolor="black"></td>
+                              <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                               <?php
-                              $black--;
+                              $blanc--;
                               $cptG++;
                             } else {
-                              if($white!=0) {
+                              if($rouge!=0) {
                                 ?>
                                 <td style="border: 1px solid black" width="25" height="25" bgcolor="red"></td>
                                 <?php
-                                $white--;
+                                $rouge--;
                                 $cptG++;
                               }
                             }
@@ -188,17 +188,18 @@ function pseudook(){
                     </td>
                   </tr>
                   <?php
-                  echo $_SESSION["cout"][$i]["brouge"]." ".$_SESSION["cout"][$i]["bnoire"]."<br/>";
+                  //echo $_SESSION["cout"][$i]["brouge"]." ".$_SESSION["cout"][$i]["bblanc"]."<br/>";
                 }
               }
               ?>
               <form method="post" action="init.php">
                 <?php
-                if(isset($_SESSION["soluce"])){
+                //si on veux l'affichage de la solution
+                /*if(isset($_SESSION["soluce"])){
                   for ($i=0; $i < 4; $i++) {
                     echo($_SESSION["soluce"][$i]." ");
                   }
-                }
+                }*/
 
                 for($k=1; $k<=4; $k++)
                 {

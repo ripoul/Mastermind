@@ -28,7 +28,7 @@ class ControleurJeu{
   function enregistrer(){
     $this->mod->jouer();
     if(isset($_SESSION["gagne"])==false){
-      $_SESSION["cout"][$_SESSION["nb_cout"]]=array(0 => $_COOKIE["c1"], 1 => $_COOKIE["c2"],2 => $_COOKIE["c3"],3 => $_COOKIE["c4"], "brouge" => $_COOKIE["cpt_rouge"], "bnoire"=>$_COOKIE["cpt_noire"]);
+      $_SESSION["cout"][$_SESSION["nb_cout"]]=array(0 => $_COOKIE["c1"], 1 => $_COOKIE["c2"],2 => $_COOKIE["c3"],3 => $_COOKIE["c4"], "brouge" => $_COOKIE["cpt_rouge"], "bblanc"=>$_COOKIE["cpt_blanc"]);
     }
     //supprimer les cookie
     unset($_COOKIE["c1"]);
