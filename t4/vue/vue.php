@@ -334,18 +334,30 @@ function pseudook(){
             <body>
               <br/>
               <br/>
-              <h2>Historique partie</h2>
+              <h2>Meilleur partie enregistrer</h2>
               utilisateur->gagner?->nombre de coups </br>
               <?php
-              for ($i=0; $i < count($histo); $i++) {
-                print($histo[$i]['pseudo']."->".$tab[$i]['partieGagnee']."->".$tab[$i]['nombreCoups']);
+              for ($i=0; $i < count($histo)-2; $i++) {
+                print($histo["1"][$i]['pseudo']."->".$histo["1"][$i]['partieGagnee']."->".$histo["1"][$i]['nombreCoups']);
                 ?><br>
-
                 <?php
               }
+              $nbjouer=$histo[2][0]["COUNT(*)"];
+              $nbgagner =$histo[3][0]["COUNT(*)"];
+              $ratio= $nbgagner/$nbjouer*100;
+
               ?>
+              <br/>
+              <br/>
+              <h2>Historique partie</h2>
+              <br/>
+
+              Vous avez un ratio de <?php echo(round($ratio,2));?>% de victoire.
+
+              <br/>
+              <br/>
               <form method="post" action="init.php">
-                <input type="submit" name="cont" value="continuer"/>
+              <input type="submit" name="cont" value="continuer"/>
               </form>
               <?php
             }
