@@ -109,7 +109,7 @@ function pseudook(){
                           for ($a=0; $a < 2; $a++) {
                             if($blanc!=0) {
                               ?>
-                              <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
+                              <td style="border: 1px solid black" width="25" height="25"></td>
                               <?php
                               $blanc--;
                               $cptG++;
@@ -126,7 +126,7 @@ function pseudook(){
 
                           while($cptG<2){
                             ?>
-                            <td style="border: 1px solid black" width="25" height="25"></td>
+                            <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                             <?php
                             $cptG++;
                           }
@@ -138,7 +138,7 @@ function pseudook(){
                           for ($a=0; $a < 2; $a++) {
                             if($blanc!=0) {
                               ?>
-                              <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
+                              <td style="border: 1px solid black" width="25" height="25"></td>
                               <?php
                               $blanc--;
                               $cptG++;
@@ -155,7 +155,7 @@ function pseudook(){
 
                           while($cptG<4){
                             ?>
-                            <td style="border: 1px solid black" width="25" height="25"></td>
+                            <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                             <?php
                             $cptG++;
                           }
@@ -230,7 +230,7 @@ function pseudook(){
                                 for ($a=0; $a < 2; $a++) {
                                   if($blanc!=0) {
                                     ?>
-                                    <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
+                                    <td style="border: 1px solid black" width="25" height="25"></td>
                                     <?php
                                     $blanc--;
                                     $cptG++;
@@ -247,7 +247,7 @@ function pseudook(){
 
                                 while($cptG<2){
                                   ?>
-                                  <td style="border: 1px solid black" width="25" height="25"></td>
+                                  <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                                   <?php
                                   $cptG++;
                                 }
@@ -259,7 +259,7 @@ function pseudook(){
                                 for ($a=0; $a < 2; $a++) {
                                   if($blanc!=0) {
                                     ?>
-                                    <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
+                                    <td style="border: 1px solid black" width="25" height="25"></td>
                                     <?php
                                     $blanc--;
                                     $cptG++;
@@ -276,7 +276,7 @@ function pseudook(){
 
                                 while($cptG<4){
                                   ?>
-                                  <td style="border: 1px solid black" width="25" height="25"></td>
+                                  <td style="border: 1px solid black" width="25" height="25" bgcolor="grey"></td>
                                   <?php
                                   $cptG++;
                                 }
