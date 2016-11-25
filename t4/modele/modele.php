@@ -1,5 +1,5 @@
 <?php
-
+  
 class MonException extends Exception{
   private $chaine;
   public function __construct($chaine){
