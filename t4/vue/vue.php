@@ -338,7 +338,7 @@ function pseudook(){
               <h2>Meilleur partie enregistrer</h2>
               utilisateur->gagner?->nombre de coups </br>
               <?php
-              for ($i=0; $i < count($histo)-2; $i++) {
+              for ($i=0; $i < count($histo[1]); $i++) {
                 print($histo["1"][$i]['pseudo']."->".$histo["1"][$i]['partieGagnee']."->".$histo["1"][$i]['nombreCoups']);
                 ?><br>
                 <?php
