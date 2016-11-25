@@ -290,6 +290,8 @@ function pseudook(){
                       }
                     }
                     ?>
+
+                    Nombre de coup restant : <?php echo 10-$_SESSION["nb_cout"] ?> cout(s). <br/><br/>
                     <form method="post" action="init.php">
                       <?php
                       //si on veux l'affichage de la solution
@@ -315,7 +317,6 @@ function pseudook(){
                     <?php
                   }
                   ?>
-
                 </p>
                 <p><input type="submit" value="Essayer cette combinaison"></p>
               </form>

@@ -34,7 +34,7 @@ class jeu{
 			$cpt_blanc=0;
 			$_vartab["tab_tmp"]=array();
 			for ($i=0; $i < 4; $i++) {
-				$_vartab["tab_tmp"]=array();
+				//$_vartab["tab_tmp"]=array();
 				for ($j=0; $j < 4; $j++) {
 					if($_SESSION["soluce"][$i]==$_COOKIE["c".($j+1)] && in_array($_COOKIE["c".($j+1)], $_vartab["tab_tmp"])==false){
 						$_vartab["tab_tmp"][1]=$_COOKIE["c".($j+1)];
