@@ -291,7 +291,7 @@ function pseudook(){
                     }
                     ?>
 
-                    Nombre de coup restant : <?php echo 10-$_SESSION["nb_cout"] ?> cout(s). <br/><br/>
+                    Nombre de coup restant : <?php if(isset($_SESSION["nb_cout"])){echo 10-$_SESSION["nb_cout"];} else{echo(10);} ?> cout(s). <br/><br/>
                     <form method="post" action="init.php">
                       <?php
                       //si on veux l'affichage de la solution
