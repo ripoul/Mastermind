@@ -46,7 +46,7 @@ function pseudook(){
       <br/>
       <br/>
       <center>
-        <h3>gagne en <?php echo $_SESSION["nb_cout"]; ?> cout(s)</h3>
+        <h3>gagne en <?php echo $_SESSION["nb_cout"]; ?> coup(s)</h3>
         <br/>
         <br/>
         <form method="post" action="init.php">
@@ -291,7 +291,7 @@ function pseudook(){
                     }
                     ?>
 
-                    Nombre de coup restant : <?php if(isset($_SESSION["nb_cout"])){echo 10-$_SESSION["nb_cout"];} else{echo(10);} ?> cout(s). <br/><br/>
+                    Nombre de coups restant : <?php if(isset($_SESSION["nb_cout"])){echo 10-$_SESSION["nb_cout"];} else{echo(10);} ?> coup(s). <br/><br/>
                     <form method="post" action="init.php">
                       <?php
                       //si on veux l'affichage de la solution
