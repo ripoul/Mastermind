@@ -295,11 +295,11 @@ function pseudook(){
                     <form method="post" action="init.php">
                       <?php
                       //si on veux l'affichage de la solution
-                      if(isset($_SESSION["soluce"])){
+                      /*if(isset($_SESSION["soluce"])){
                       for ($i=0; $i < 4; $i++) {
                       echo($_SESSION["soluce"][$i]." ");
                     }
-                  }
+                  }*/
 
                   for($k=1; $k<=4; $k++)
                   {
