@@ -482,13 +482,23 @@ class Vue{
 
 
               div.bouton-aligne{
-	display:inline-block;
-	width:30%;
-	margin:5px 1% 5px 1%;
-	text-align:center;
-}
+	                display:inline-block;
+	                width:30%;
+	                margin:5px 1% 5px 1%;
+	                text-align:center;
+              }
 
+              div.bouton-try{
+                width:96%;
+                margin:5px 1% 5px 1%;
+              }
 
+              div.petitselect{
+	                display:inline-block;
+	                width:22%;
+	                margin:5px 1% 5px 1%;
+	                text-align:center;
+              }
 
                   </style>
 
@@ -585,7 +595,7 @@ class Vue{
                       }
                       ?>
 
-                      Nombre de coups restant : <?php if(isset($_SESSION["nb_cout"])){echo 10-$_SESSION["nb_cout"];} else{echo(10);} ?> coup(s). <br/><br/>
+                      <center> Nombre de coups restant : <?php if(isset($_SESSION["nb_cout"])){echo 10-$_SESSION["nb_cout"];} else{echo(10);} ?> coup(s). </center><br/><br/>
                       <form method="post" action="init.php">
                         <?php
                         //si on veux l'affichage de la solution
@@ -598,6 +608,7 @@ class Vue{
                     for($k=1; $k<=4; $k++)
                     {
                       ?>
+                      <div class="petitselect">
                       <select name="<?php echo "choixCouleur".$k; ?>">
                         <option value="red" style="background-color: red">rouge</option>
                         <option value="yellow" style="background-color: yellow">jaune</option>
@@ -608,12 +619,15 @@ class Vue{
                         <option value="purple" style="background-color: purple">violet</option>
                         <option value="fuchsia" style="background-color: fuchsia">fushia</option>
                       </select>
+                    </div>
                       <?php
                     }
                     ?>
                   </p>
                   <p>
+                    <div class="bouton-try">
                   <button type="submit" name="soumettre" class="btn btn-primary btn-block btn-large">Essayer cette combinaison</button>
+                  </div>
                 </form>
 
                 <form method="post" action="init.php">
