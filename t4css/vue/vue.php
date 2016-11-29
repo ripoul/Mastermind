@@ -80,12 +80,19 @@ class Vue{
     }
     input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
+	#mastermindTitre {
+		text-align: center;
+	}
+
         </style>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
     </head>
-
+		 
+	<header>
+		<p id="mastermindTitre"><img src="ressources/img/mastermindTitre.png" alt="Mastermind" /></p> 
+	</header>
     <body>
       <div class="login">
     	<h1>Login</h1>
