@@ -95,11 +95,11 @@ class Vue{
 	</header>
     <body>
       <div class="login">
-    	<h1>Login</h1>
+    	<h1>Connexion</h1>
         <form method="post" action="init.php">
-        	<input type="text" name="pseudo" placeholder="Username" required="required" />
-            <input type="password" name="mdp" placeholder="Password" required="required" />
-            <button type="submit" name="soumettre" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        	<input type="text" name="pseudo" placeholder="Identifiant" required="required" />
+            <input type="password" name="mdp" placeholder="Mot de passe" required="required" />
+            <button type="submit" name="soumettre" class="btn btn-primary btn-block btn-large">Je veux jouer!</button>
         </form>
     </div>
     </body>
@@ -397,9 +397,9 @@ class Vue{
 
             <body>
               <div class="login">
-            	<h1>  pseudo ou mdp incorect</h1>
+            	<h1>Identifiants incorects</h1>
                 <form method="post" action="init.php">
-                    <button type="submit" name="ch_ut" class="btn btn-primary btn-block btn-large">menue principal</button>
+                    <button type="submit" name="ch_ut" class="btn btn-primary btn-block btn-large">Menu principal</button>
                 </form>
             </div>
 
@@ -584,6 +584,7 @@ class Vue{
               margin: 0 0 0 -150px;
               width:300px;
               height:300px;
+							color:lightgrey;
             }
             .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
