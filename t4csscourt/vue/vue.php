@@ -354,7 +354,7 @@ function head_pse(){
 
             <h4>La reponse était :</h4>
             <div class="tableau">
-              <table>
+              <table bgcolor="LightGrey">
                 <?php
                 for ($j=0; $j < 4; $j++) {
                   ?>
@@ -549,7 +549,7 @@ function head_pse(){
           if (isset($_SESSION["cout"])) {
             ?>
             <div class="tableau">
-              <table style="border: 1px solid black">
+              <table style="border: 1px solid black"  bgcolor="LightGrey">
                 <?php
                 for ($i=1; $i < $_SESSION["nb_cout"]+1; $i++) {
                   ?>
