@@ -15,7 +15,7 @@ class Vue{
     <body>
       <div class="login">
         <h1>Connexion</h1>
-        <form method="post" action="init.php">
+        <form method="post" action="index.php">
           <input type="text" name="pseudo" placeholder="Identifiant" required="required" />
           <input type="password" name="mdp" placeholder="Mot de passe" required="required" />
           <button type="submit" name="soumettre" class="btn btn-primary btn-block btn-large">Je veux jouer!</button>
@@ -34,7 +34,7 @@ class Vue{
       <div class="login">
         <h1>  GAGN&Eacute;</h1>
         <h3>gagne en <?php echo $_SESSION["nb_cout"]; ?> coup(s)</h3>
-        <form method="post" action="init.php">
+        <form method="post" action="index.php">
           <button type="submit" name="ch_ut" class="btn btn-primary btn-block btn-large">Changer d'utilisateur</button>
           <button type="submit" name="recomencer" class="btn btn-primary btn-block btn-large">Recommencer partie</button>
         </div>
@@ -47,7 +47,7 @@ class Vue{
         <body>
           <div class="login">
             <h1> Perdu !</h1><br/><br/>
-            <form method="post" action="init.php">
+            <form method="post" action="index.php">
               <div class="bouton-aligne">
                 <button type="submit" name="recomencer" class="btn btn-primary btn-block btn-large">recommencer partie</button>
               </div>
@@ -177,7 +177,7 @@ class Vue{
           <body>
             <div class="login">
               <h1>Identifiants incorects</h1>
-              <form method="post" action="init.php">
+              <form method="post" action="index.php">
                 <button type="submit" name="ch_ut" class="btn btn-primary btn-block btn-large">Menu principal</button>
               </form>
             </div>
@@ -201,7 +201,7 @@ class Vue{
             }
           }*/
           ?>
-          <form method="post" action="init.php">
+          <form method="post" action="index.php">
             <?php
             for($k=1; $k<=4; $k++)
             {
@@ -228,7 +228,7 @@ class Vue{
             </div>
           </form>
 
-          <form method="post" action="init.php">
+          <form method="post" action="index.php">
             <div class="bouton-aligne">
               <button type="submit" name="recomencer" class="btn btn-primary btn-block btn-large">recommencer partie</button>
             </div>
@@ -366,7 +366,7 @@ class Vue{
 
             <br/>
             <br/>
-            <form method="post" action="init.php">
+            <form method="post" action="index.php">
               <button type="submit" name="cont" class="btn btn-primary btn-block btn-large">retour</button>
             </form>
           </div>
