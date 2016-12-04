@@ -11,19 +11,20 @@ require_once __DIR__."/../modele/modele.php";
 class ControleurAuthentification{
   /**
    * La vu
-   * @var Vue
+   *
+   * @var $vue Vue
    */
   private $vue;
 
   /**
  * Les heads de la vu
- * @var Css
+ * @var Css $css
  */
  private $css;
 
   /**
  * le modele de la base de donnée
- * @var Modele
+ * @var Modele $mod
  */
   private $mod;
 
@@ -45,7 +46,7 @@ class ControleurAuthentification{
   }
 
   /**
-   * fonction qui verifie si un pseudo entrer en le bon
+   * fonction qui verifie si un pseudo entré est le bon
    * @return true si le pseudo est le bon
    */
   function verif(){

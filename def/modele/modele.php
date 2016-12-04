@@ -97,7 +97,7 @@ public function get10Partie(){
 }
 
 /**
- * fonction qui verifie si le mot de passe et le pseudo corresponde a une entrer dans la base de donnee
+ * fonction qui verifie si le mot de passe et le pseudo corresponde a une entrée dans la base de donnee
  * @return true si pseudo et mot de passe ok false sinon
  */
 public function exists(){
