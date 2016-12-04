@@ -1,9 +1,20 @@
 <?php
+/*
+*Classe représentant le jeu du masterminds
+*@version 1.0
+* @since 03/12/2016
+* @author LE BRIS Jules & DROUARD Antoine
+*/
 class jeu{
-	private $userColors;
-
+	/**
+   * les couleur pouvant etre choisi associer a un numéro
+   * @var array
+   */
 	public static $INT_COLORS = array(	1 => "red", 2 => "yellow",3 => "green",4 => "blue",5 => "orange",6 => "white",7 => "purple",8 => "fuchsia");
 
+	/**
+   * le constructeur du modele du jeu
+   */
 	function __construct(){
 		if(isset($_SESSION["nb_cout"])==false){
 			$_SESSION["nb_cout"]=0;
@@ -11,6 +22,9 @@ class jeu{
 		}
 	}
 
+	/**
+   * fonction maitre de la classe : elle verifie si le joueur a gagner ou perdu. elle calcule aussi le noubre de bile a la bone place ou non.
+   */
 	function jouer(){
 		$_SESSION["nb_cout"]=$_SESSION["nb_cout"]+1;
 		if(array_key_exists("c1", $_COOKIE)&&array_key_exists("c2", $_COOKIE)&&array_key_exists("c3", $_COOKIE)&&array_key_exists("c4", $_COOKIE)){

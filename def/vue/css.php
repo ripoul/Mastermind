@@ -1,10 +1,20 @@
 <?php
+/*
+*Classe contenant le css de toutes les vus du code html
+*@version 1.0
+* @since 03/12/2016
+* @author LE BRIS Jules & DROUARD Antoine
+*/
 class Css{
-
-
+  /**
+  *constructeur de la classe css
+  */
   function __construct(){
   }
 
+  /**
+  *css de la page de demande de pseudo
+  */
   function head_pse(){
     ?>
     <html>
@@ -86,6 +96,10 @@ class Css{
     </head>
     <?php
   }
+
+  /**
+  *css des pages à 2 boutons centrés
+  */
   function head_2b(){
     ?>
     <html>
@@ -191,6 +205,9 @@ class Css{
     <?php
   }
 
+  /**
+  *css des pages à 3 boutons centrés
+  */
   function head_3b(){
     ?>
     <html>

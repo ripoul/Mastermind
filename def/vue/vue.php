@@ -1,11 +1,22 @@
 <?php
+/*
+*Classe contenant le html de toutes les vus
+*@version 1.0
+* @since 03/12/2016
+* @author LE BRIS Jules & DROUARD Antoine
+*/
 class Vue{
 
-
+  /**
+  *constructeur de la classe Vue
+  */
   function __construct(){
 
   }
 
+  /**
+  *fontion qui affiche la demande de pseudo
+  */
   function demandePseudo(){
     //header("Content-type: text/html; charset=utf-8");
     ?>
@@ -28,6 +39,9 @@ class Vue{
     <?php
   }
 
+  /**
+  *fontion qui affiche la page de victoire
+  */
   function gagner(){
     ?>
     <body>
@@ -41,7 +55,9 @@ class Vue{
         <?php
       }
 
-
+      /**
+      *fontion qui affiche la page de defaite
+      */
       function perdu(){
         ?>
         <body>
@@ -171,7 +187,9 @@ class Vue{
         }
 
 
-
+        /**
+        *fontion qui affiche un message mot de passe incorecte
+        */
         function pseudonok(){
           ?>
           <body>
@@ -188,6 +206,9 @@ class Vue{
           <?php
         }
 
+        /**
+        *fontion qui affiche les precedentes proposition de l'utilisateur et propose differente option
+        */
         function premiere_demande(){
           ?>
           <body>
@@ -340,6 +361,10 @@ class Vue{
         <?php
       }
 
+      /**
+      *fontion qui affiche les 5 meilleurs partie
+      *@param array $histo le tableau contenant les 5 meilleurs parties et leurs resultats
+      */
       function histoPartie($histo){
         ?>
         <body>

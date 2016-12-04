@@ -2,17 +2,36 @@
 
 require_once __DIR__."/controleurAuthentification.php";
 require_once __DIR__."/controleurJeu.php";
-
+/*
+*Controleur qui gere l'avancement de programme (savoir si un cout est jouer ou connaitre la demande de l'utilisateur)
+*@version 1.0
+* @since 03/12/2016
+* @author LE BRIS Jules & DROUARD Antoine
+*/
 class Routeur {
+  /**
+   * Le controleur de la base de donnee
+   * @var ControleurAuthentification
+   */
   private $ctrlAuthentification;
+
+  /**
+   * Le controleur du jeu
+   * @var ControleurJeu
+   */
   private $ctrlJeu;
 
+  /**
+   * le constructeur du controleur
+   */
   public function __construct() {
     $this->ctrlAuthentification= new ControleurAuthentification();
     $this->ctrlJeu=new ControleurJeu();
   }
 
-  // Traite une requête entrante
+  /**
+   * traite une requete entrante
+   */
   public function route() {
 
     if(isset($_POST["ch_ut"])){

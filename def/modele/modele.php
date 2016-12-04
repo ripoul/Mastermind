@@ -17,9 +17,22 @@ class ConnexionException extends MonException{
 class TableAccesException extends MonException{
 }
 
-
+/*
+*Classe représentant le lien entre l'applicaton php et la base de donnee mysql.
+*@version 1.0
+* @since 03/12/2016
+* @author LE BRIS Jules & DROUARD Antoine
+*/
 class Modele{
+  /**
+   * la connextion a la base de donnee
+   * @var PDO
+   */
   private $connexion;
+
+  /**
+   * le constructeur du lien : etablissement de la connextion avec la BD
+   */
   public function __construct(){
     try{
       /*$chaine="mysql:host=localhost;dbname=PHP_MASTER";
@@ -40,23 +53,16 @@ class Modele{
     }
   }
 
+  /**
+   * fonction qui deconecte la base de donnee
+   */
 public function deconnexion(){
   $this->connexion=null;
 }
 
-public function getPseudos(){
-  try{
-    $statement=$this->connexion->query("SELECT pseudo from pseudonyme;");
-    while($ligne=$statement->fetch()){
-      $result[]=$ligne['pseudo'];
-    }
-    return($result);
-  }
-  catch(PDOException $e){
-    throw new TableAccesException("problème avec la table pseudonyme");
-  }
-}
-
+/**
+ * fonction qui recupere les 5 meilleurs parties quelque soit les pseudo
+ */
 public function get10Partie(){
   try{
     $statement=$this->connexion->prepare("SELECT * from parties order by nombreCoups limit 0,5;");
@@ -90,7 +96,10 @@ public function get10Partie(){
   }
 }
 
-
+/**
+ * fonction qui verifie si le mot de passe et le pseudo corresponde a une entrer dans la base de donnee
+ * @return true si pseudo et mot de passe ok false sinon
+ */
 public function exists(){
   try{
     $statement = $this->connexion->prepare("select pseudo from joueurs where pseudo=?;");
@@ -119,6 +128,9 @@ public function exists(){
   }
 }
 
+/**
+ * enregistre la partie finie dans la bd
+ */
 public function enregistrerPartie(){
   try{
     $statement = $this->connexion->prepare("insert into parties (pseudo, partieGagnee, nombreCoups) values (?,?,?);");
